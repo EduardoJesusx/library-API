@@ -28,6 +28,12 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+*keep*
+
+*credentials*
+!*credentials.sample*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+config/credentials.yml.enc
+bin/bundle

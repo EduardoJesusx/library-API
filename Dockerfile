@@ -1,17 +1,14 @@
-FROM ruby:3.1
-LABEL maintainer "Tim Brust <github@timbrust.de>"
+FROM ruby:3.1.4
 
-ARG REFRESHED_AT
-ENV REFRESHED_AT $REFRESHED_AT
+WORKDIR /app
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
 
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
-  && apt-get update -qq && apt-get install -qq --no-install-recommends \
-    nodejs \
-  && apt-get upgrade -qq \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*\
-  && npm install -g yarn@1
+COPY . .
 
-WORKDIR /usr/src/app
+# ENTRYPOINT ["./entrypoint.sh"]
+EXPOSE 3000
+
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]
