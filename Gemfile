@@ -18,6 +18,10 @@ gem "puma", "~> 5.0"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
+gem 'actionmailer', '~> 7.0.5'
+
+gem 'byebug', '~> 9.0', '>= 9.0.6'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -43,6 +47,6 @@ end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  gem "spring"
+  # gem "spring"
 end
 
