@@ -10,7 +10,7 @@ export function Header(){
       </div>
       <nav className="w-1/2">
         <ul className="flex justify-between gap-3">
-          {["Books","Authors","Genres"].map((value)=>(
+          {["books","authors","genres"].map((value)=>(
             <NavLink text={value}/>
           ))}
         </ul>
@@ -19,11 +19,15 @@ export function Header(){
     </header>
   )
 }
+// create a function for make first word uppercase
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function NavLink({ text }:{text: string}){
   return(
     <li>
-      <a className="hover:border-b-4 transition ease-in-out delay-10" href={ text }>{ text }</a>
+      <a className="hover:border-b-4 transition ease-in-out delay-10" href={ text }>{ capitalizeFirstLetter(text) }</a>
     </li>
   )
 }
