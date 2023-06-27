@@ -12,6 +12,7 @@ export function Header(){
         <ul className="flex justify-between gap-3">
           {[{text: "Books", link: "/books"},{text: "Authors", link: "/authors"}, {text: "Genres", link: "/book_types"}].map(({text, link})=>(
             <NavLink text={text} link={link} key={link}/>
+
           ))}
         </ul>
       </nav>   
