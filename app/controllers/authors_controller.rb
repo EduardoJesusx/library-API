@@ -49,7 +49,6 @@ class AuthorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def author_params
-      byebug
       params.require(:author).permit(:name, :nationality)
     end
 end
