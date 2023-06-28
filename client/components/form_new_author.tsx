@@ -33,8 +33,10 @@ export default function NewAuthor() {
   return(
     <div>
       <form onSubmit={handleSubmit(onsubmit)}>
-        <label htmlFor="name">Teste</label>
+        <label htmlFor="name">Name</label>
         <input {...register(`name`)} type="text" name='name'/>
+        <label htmlFor="nationality">Nationality</label>
+        <input {...register(`nationality`)} type="text" name='nationality'/>
         <button type="submit">Enviar</button>
       </form>
     </div>
